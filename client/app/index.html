@@ -15,11 +15,10 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="clientApp">
+  <body ng-app="ryanapp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
     <!-- Add your site or application content here -->
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
@@ -33,14 +32,14 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">client</a>
+            <a class="navbar-brand" data-ui-sref="home">client</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
+              <li class="active"><a data-ui-sref="home">Home</a></li>
+              <li><a data-ui-sref="home.about">About</a></li>
               <li><a ng-href="#/">Contact</a></li>
             </ul>
           </div>
@@ -49,7 +48,7 @@
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
+      <div data-ui-view="content"></div>
     </div>
 
     <div class="footer">
@@ -59,7 +58,7 @@
     </div>
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!--&lt;!&ndash; Google Analytics: change UA-XXXXX-X to be your site's ID &ndash;&gt;
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
@@ -68,7 +67,7 @@
 
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
-    </script>
+    </script>-->
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -76,14 +75,18 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="core/ryanapp.module.js"></script>
+        <script src="home/ryanapp-home.module.js"></script>
+        <script src="about/ryanapp-about.module.js"></script>
+        <script src="core/app.js"></script>
+        <script src="core/ryanapp.router.js"></script>
+        <script src="home/home-controller.js"></script>
+        <script src="about/about-controller.js"></script>
         <!-- endbuild -->
 </body>
 </html>
