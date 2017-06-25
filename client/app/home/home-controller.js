@@ -1,8 +1,8 @@
 /**
  * @ngdoc function
- * @name ryanapp.controller:MainCtrl
+ * @name ryanapp.controller:HomeCtrl
  * @description
- * # MainCtrl
+ * # HomeCtrl
  * Controller of the clientApp
  */
 
@@ -11,16 +11,33 @@
   'use strict';
 
   angular.module('ryanapp.home')
-    .controller('MainCtrl', MainCtrl);
+    .controller('HomeCtrl', HomeCtrl);
 
-  MainCtrl.$inject = ['$scope'];
+  HomeCtrl.$inject = ['$scope', 'User'];
 
-  function MainCtrl($scope){
+  function HomeCtrl($scope, User){
 
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
+    var self = this;
+
+    /*self.users = [
+      {
+        firstName: 'Ryan',
+        lastName: 'Harris',
+        position: 'Software Developer',
+        personality: 'Great'
+      }
+    ];*/
+
+    self.users = User.getList().$object; //object goes to the serve fetches the list and dynamic changes the object
+                                          //uses two way binding to automatically change the variable
+
+    self.awesomeThings = [
+      'Ryan app',
       'AngularJS',
-      'Karma'
+      'Karma',
+      'Yeoman',
+      'Grunt',
+      'Bootstrap'
     ];
 
   }

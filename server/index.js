@@ -34,11 +34,6 @@ app.use(function(req, res, next) {
 
 });
 
-//Points to the index to serve front-end and angular
-app.get('*', function (req, res) {
-    res.sendFile(__dirname + '/client/app/index.html');
-});
-
 //Connects to mongodb (localhost is the server)
 mongoose.connect('mongodb://localhost/ryan-is-mean');
 mongoose.connection.once('open', function () {

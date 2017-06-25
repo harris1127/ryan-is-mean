@@ -40,7 +40,6 @@
             <ul class="nav navbar-nav">
               <li class="active"><a data-ui-sref="home">Home</a></li>
               <li><a data-ui-sref="home.about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -76,6 +75,8 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -85,6 +86,7 @@
         <script src="about/ryanapp-about.module.js"></script>
         <script src="core/app.js"></script>
         <script src="core/ryanapp.router.js"></script>
+        <script src="core/ryanapp.config.js"></script>
         <script src="home/home-controller.js"></script>
         <script src="about/about-controller.js"></script>
         <!-- endbuild -->
